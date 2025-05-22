@@ -26,6 +26,13 @@ const GlobalStyles = () => (
     .animate-fadeIn {
       animation: fadeIn 0.2s ease-in-out forwards;
     }
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(100%); }
+      to { opacity: 1; transform: translateX(0); }
+    }
+    .animate-slideIn {
+      animation: slideIn 0.3s ease-out forwards;
+    }
     @media (min-width: 640px) {
       .logo-text-header {
         font-size: 1.5rem;
