@@ -1,5 +1,5 @@
 const GlobalStyles = () => (
-    <style>{`
+  <style>{`
     body {
       font-family: 'Inter', sans-serif;
       background-color: #0B0B0F;
@@ -18,6 +18,13 @@ const GlobalStyles = () => (
     .logo-text-header {
       font-size: 1.25rem;
       line-height: 1.75rem;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .animate-fadeIn {
+      animation: fadeIn 0.2s ease-in-out forwards;
     }
     @media (min-width: 640px) {
       .logo-text-header {
