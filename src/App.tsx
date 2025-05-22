@@ -4,6 +4,7 @@ import HeroSection from './components/HeroSection';
 import FeaturesSection from './components/FeaturesSection';
 import DemoSection from './components/DemoSection';
 import PricingSection from './components/PricingSection';
+import AboutSection from './components/AboutSection'; // Adicionando o novo componente
 import Footer from './components/Footer';
 
 const App = () => (
@@ -11,9 +12,14 @@ const App = () => (
     <GlobalStyles />
     <Header />
     <HeroSection />
-    <FeaturesSection />
+    <div id="funcionalidades">
+      <FeaturesSection />
+    </div>
     <DemoSection />
-    <PricingSection />
+    <div id="precos">
+      <PricingSection />
+    </div>
+    <AboutSection />
     <Footer />
   </>
 );
