@@ -30,7 +30,7 @@ const Header = () => {
         <header className="py-4 px-4 sticky top-0 z-40 header-bg backdrop-blur-md">
             <div className="container mx-auto flex justify-between items-center">
                 <a href="#" className="flex items-center">
-                    <img src={focusOnTasksLogo} alt="FocusOnTasks Logo" className="h-2 md:h-6" />
+                    <img src={focusOnTasksLogo} alt="FocusOnTasks Logo" className="h-5 md:h-6" />
                 </a>
 
                 <div className="flex items-center space-x-4">
