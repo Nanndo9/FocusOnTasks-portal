@@ -14,7 +14,7 @@ const PricingSection = () => {
         },
         {
             name: "Premium",
-            price: "R$29",
+            price: "R$2,99",
             period: "/mês",
             description: "Para produtividade sem limites.",
             featuresList: ["Projetos ilimitados", "Colaboração avançada", "Sincronização na nuvem", "Suporte prioritário"],
