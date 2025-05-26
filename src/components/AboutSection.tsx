@@ -1,3 +1,5 @@
+import { motion } from "framer-motion";
+
 const AboutSection = () => {
     return (
         <section id="sobre" className="py-20 bg-gray-900">
@@ -5,7 +7,13 @@ const AboutSection = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">Sobre nós</h2>
 
                 <div className="max-w-4xl mx-auto">
-                    <div className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 mb-10">
+                    <motion.div
+                        className="bg-gray-800 bg-opacity-50 p-8 rounded-lg border border-gray-700 mb-10"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true, margin: "-50px" }}
+                        transition={{ duration: 0.6 }}
+                    >
                         <h3 className="text-2xl font-semibold mb-4 text-purple-400">Minha história</h3>
                         <p className="text-gray-300 mb-6 leading-relaxed">
                             Olá! Sou o desenvolvedor por trás do FocusOnTasks. Como alguém neurodivergente,
@@ -23,38 +31,53 @@ const AboutSection = () => {
                             beneficiar também. É assim que nasce o FocusOnTasks — da necessidade real de alguém que
                             entende os desafios de manter o foco e a organização no dia a dia.
                         </p>
-                    </div>
+                    </motion.div>
 
                     <div className="grid md:grid-cols-2 gap-8">
-                        <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <motion.div
+                            className="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700"
+                            initial={{ opacity: 0, x: -30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
+                            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)" }}
+                        >
                             <h3 className="text-xl font-semibold mb-3 text-purple-400">Minha missão</h3>
                             <p className="text-gray-300">
                                 Criar ferramentas que realmente funcionem para pessoas com cérebros diversos,
-                                especialmente pessoas neurodivergentes. Acredito que a tecnologia deve se adaptar às pessoas,não o contrário. O FocusOnTasks é desenvolvido com atenção especial às necessidades de quem precisa de clareza, simplicidade e estímulo visual para permanecer organizado.
+                                especialmente pessoas neurodivergentes. Acredito que a tecnologia deve se adaptar às pessoas, não o contrário.
                             </p>
-                        </div>
+                        </motion.div>
 
-                        <div className="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <motion.div
+                            className="bg-gray-800 bg-opacity-50 p-6 rounded-lg border border-gray-700"
+                            initial={{ opacity: 0, x: 30 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true, margin: "-50px" }}
+                            transition={{ duration: 0.5, delay: 0.4 }}
+                            whileHover={{ y: -5, boxShadow: "0 10px 25px -5px rgba(0, 0, 0, 0.2)" }}
+                        >
                             <h3 className="text-xl font-semibold mb-3 text-purple-400">Meus valores</h3>
-                            <ul className="text-gray-300 space-y-2">
-                                <li className="flex items-center">
-                                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                    Simplicidade que não sacrifica funcionalidade
-                                </li>
-                                <li className="flex items-center">
-                                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                    Design que reduz a sobrecarga cognitiva
-                                </li>
-                                <li className="flex items-center">
-                                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                    Acessibilidade para diferentes modos de pensar
-                                </li>
-                                <li className="flex items-center">
-                                    <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
-                                    Construído por alguém que entende os desafios
-                                </li>
-                            </ul>
-                        </div>
+                            <motion.ul className="text-gray-300 space-y-2">
+                                {[
+                                    "Simplicidade que não sacrifica funcionalidade",
+                                    "Design que reduz a sobrecarga cognitiva",
+                                    "Acessibilidade para diferentes modos de pensar",
+                                    "Construído por alguém que entende os desafios"
+                                ].map((value, i) => (
+                                    <motion.li
+                                        key={i}
+                                        className="flex items-center"
+                                        initial={{ opacity: 0, x: 20 }}
+                                        animate={{ opacity: 1, x: 0 }}
+                                        transition={{ delay: 0.6 + i * 0.1 }}
+                                    >
+                                        <span className="w-2 h-2 bg-purple-500 rounded-full mr-2"></span>
+                                        {value}
+                                    </motion.li>
+                                ))}
+                            </motion.ul>
+                        </motion.div>
                     </div>
                 </div>
             </div>
