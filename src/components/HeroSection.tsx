@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const HeroSection = () => (
     <section className="hero-section-bg py-16 sm:py-20 md:py-32">
@@ -27,16 +28,20 @@ const HeroSection = () => (
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4, duration: 0.5 }}
             >
-                <motion.a
-                    href="#"
-                    className="bg-gray-200 hover:bg-gray-300 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold shadow-lg w-full sm:w-auto transition-colors"
+                <motion.div
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                 >
-                    Comece Gratuitamente
-                </motion.a>
+                    <Link
+                        to="/register"
+                        className="bg-gray-200 hover:bg-gray-300 text-gray-900 px-8 py-3 rounded-lg text-lg font-semibold shadow-lg w-full sm:w-auto transition-colors inline-block"
+                    >
+                        Comece Gratuitamente
+                    </Link>
+                </motion.div>
+
                 <motion.a
-                    href="#features"
+                    href="#funcionalidades"
                     className="border-2 border-gray-600 hover:bg-gray-700 text-gray-300 hover:text-white px-8 py-3 rounded-lg text-lg font-semibold w-full sm:w-auto transition-colors"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}

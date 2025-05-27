@@ -1,5 +1,6 @@
 import { useState } from 'react';
-import focusOnTasksLogo from '../assets/focus-on-tasks-white-logo.svg'; // 
+import { Link } from 'react-router-dom';
+import focusOnTasksLogo from '../assets/focus-on-tasks-white-logo.svg';
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -29,9 +30,9 @@ const Header = () => {
     return (
         <header className="py-4 px-4 sticky top-0 z-40 header-bg backdrop-blur-md">
             <div className="container mx-auto flex justify-between items-center">
-                <a href="#" className="flex items-center">
+                <Link to="/" className="flex items-center">
                     <img src={focusOnTasksLogo} alt="FocusOnTasks Logo" className="h-5 md:h-6" />
-                </a>
+                </Link>
 
                 <div className="flex items-center space-x-4">
                     <nav className="hidden md:flex items-center space-x-4">
@@ -59,8 +60,8 @@ const Header = () => {
                             Sobre nós
                         </a>
 
-                        <a href="#" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md text-white">Entrar</a>
-                        <a href="#" className="bg-transparent hover:bg-gray-800 px-4 py-2 rounded-md text-white border border-gray-700">Cadastrar</a>
+                        <Link to="/login" className="bg-purple-600 hover:bg-purple-700 px-4 py-2 rounded-md text-white">Entrar</Link>
+                        <Link to="/register" className="bg-transparent hover:bg-gray-800 px-4 py-2 rounded-md text-white border border-gray-700">Cadastrar</Link>
                     </nav>
 
                     <button
@@ -117,12 +118,20 @@ const Header = () => {
                             {/* Botões de Entrar e Cadastrar */}
                             <div className="p-4 border-b border-gray-700">
                                 <div className="flex gap-3">
-                                    <a href="#" className="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md text-center">
+                                    <Link
+                                        to="/login"
+                                        className="flex-1 bg-purple-600 hover:bg-purple-700 text-white py-2 px-4 rounded-md text-center"
+                                        onClick={closeMenu}
+                                    >
                                         Entrar
-                                    </a>
-                                    <a href="#" className="flex-1 bg-transparent hover:bg-gray-800 text-white py-2 px-4 rounded-md text-center border border-gray-700">
+                                    </Link>
+                                    <Link
+                                        to="/register"
+                                        className="flex-1 bg-transparent hover:bg-gray-800 text-white py-2 px-4 rounded-md text-center border border-gray-700"
+                                        onClick={closeMenu}
+                                    >
                                         Cadastrar
-                                    </a>
+                                    </Link>
                                 </div>
                             </div>
 

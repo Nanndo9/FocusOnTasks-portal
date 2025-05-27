@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import CheckIcon from './CheckIcon';
 
 interface PlanProps {
@@ -50,14 +51,17 @@ const PricingCard = ({ plan }: { plan: PlanProps }) => {
                     </motion.li>
                 ))}
             </motion.ul>
-            <motion.a
-                href="#"
-                className={`mt-8 block w-full text-center px-6 py-3 rounded-lg font-semibold ${plan.ctaClass}`}
+            <motion.div
                 whileHover={{ scale: 1.03 }}
                 whileTap={{ scale: 0.97 }}
             >
-                {plan.ctaText}
-            </motion.a>
+                <Link
+                    to="/register"
+                    className={`mt-8 block w-full text-center px-6 py-3 rounded-lg font-semibold ${plan.ctaClass}`}
+                >
+                    {plan.ctaText}
+                </Link>
+            </motion.div>
         </motion.div>
     );
 };
